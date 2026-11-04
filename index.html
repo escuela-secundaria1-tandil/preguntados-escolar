@@ -10,7 +10,9 @@
 header{background:var(--navy);color:white;padding:18px 14px;text-align:center}
 .brand{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
 .logo{width:82px;height:82px;object-fit:contain;background:white;border-radius:50%;padding:4px}
-h1{margin:4px 0;font-size:clamp(1.5rem,4vw,2.5rem)}header p{margin:4px}
+h1{margin:4px 0;font-size:clamp(1.5rem,4vw,2.5rem)}
+header p{margin:4px}
+header p.jornada{color:white;font-weight:700;font-size:1.1rem;margin-top:6px}
 main{max-width:1050px;margin:22px auto;padding:0 14px}
 .panel{background:white;border-radius:20px;padding:18px;box-shadow:0 8px 25px #16365318;margin-bottom:16px}
 .top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center}
@@ -28,18 +30,25 @@ button:disabled{opacity:.45;cursor:not-allowed}.spin{background:#f5b82e;color:#1
 .category{font-weight:800;letter-spacing:.04em}.question{font-size:1.25rem;font-weight:750;line-height:1.35}
 .feedback{padding:12px;border-radius:12px;background:#eef5fb;margin-top:12px}
 .small{color:#60738a;font-size:.92rem}.hidden{display:none}
-footer{text-align:center;color:#60738a;padding:18px}
+footer{text-align:center;color:#173b58;font-weight:700;font-size:1rem;padding:18px;background:white;border-radius:15px;margin:20px 14px 30px;box-shadow:0 4px 15px #16365310}
 </style>
 </head>
 <body>
-<header><div class="brand">
-<img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIUAAAB3CAIAAACi4hR5AAAQAElEQVR4AezaB5TdRfUHcAj+LahI7AUbihVFo6hgQUpMNAGRGBBCMfTQAqGFkAChBwglAWIShBAkCMQWCGikSwKKiIj03kLvHf7w/3/M9zjn5+7mZd++t8s7x93zPXPub96dmTv33rlzZ2b7/F/vXytpoM9SvX+tpIFee7SSNZZaqtcevfZoLQ20ljS966PXHq2lgdaSpr718b9L+nvllVfCEiJlalKmppQh8lOHJQZo/1MqleBXJVQJdBV+hWpNezoMpQxRZUtNKUNUGWrTr7322hKNX589lun9a0ADSy+9dJPtsXTvX2MaaLI9lthdO4auV+TUrD3CSleiC6gFrYQOCZWlSZXQVfUndEuhvnjVY6LTIMW9+uqrSvAJ9Y4eU2mVtkpdgSivLFAP2FoBLWoPqoQ+ffoo3/CGNwja6KIvqnzxxRefeeaZRx555L777rv11lv/+c9/3nTTTXfeeecDDzzwxBNPvPDCC2xZ+LXVj1I/oN4nMAP4bB20qD0oiPoC9CuvvPLYY4/dfffd11577fnnnz9t2rSjjjpqwoQJBx100H777Tdu3LixY8eO+/ffoYceOnHixJ/97Ge//vWvL7/88ptvvvmBBx54/vnn9QPMwMB6Rit9MonSZyugde1hEfD0G2644Q9/+MMpp5xyxBFHHHDAAWwwa9asv//97/Tbt2/fz3zmM9/97nd/9KMfbbzxxkOHDh00aNA3vvGND3/4wxaH5TJnzpwpU6YccsghzHbCCScwz5VXXsmoVg/VswHEJD5bBK+DPfhjQYdaePbZZ62Dk08+2SLg5ueee+7tt9/+nve853vf+97WW289atSoffbZZ/fdd992221/+tOfssT666+/7rrrDh48+Mc//vFmm2221VZb7bzzznst+ttxxx1VfvGLX3zuuecuueSSmTNnTp48mW3Y+P777ycGAVhFCYjUKEGNMkD3DF43e3B/U61O0udDDz30xz/+0VI47rjj/va3v73lLW9Za621dtppJzYYPnw49//Sl770xje+8ZZbbpk3b95pp5127LHHilfMM2bMmH333RchWE2dOvV3v/vdNddcY4NZYYUVLKCf/OQnDLPbbrttuummlpTwZZEdeeSRerD+slwiiYVltydJQEhA59ceKF8He5RZVWOFMPLLX/6SNmfMmGF9/OAHP6DckSNHfvOb3xTur7/++tmzZ9M+U/385z/n3fSI7a1vfetHPvKRT3/605///Oc/+9nPrrjiipaR/vn+ggULzjzzTEvBIps+ffrFF1/85JNPfvzjHx8yZIiet99++w996EOXXnopq5x44olXX321BEFDY2WVlBIBfuoZvD72MEN5jtIk5Ui89bDDDrNRv+td7xKF7BPf//73beC//e1vp0yZcvzxx8+dO9cnDa622mrij6g1YsQIOsUsOm255ZYClwWkfptttlG/ww47bLfddmJX//79WYvhbTmnnnqqfd5WhFZpxQhp7G21sdnRRx994403WgpMEtkiHgl7Eq+DPcyTgkxS1mSDPfzww+20H/3oR20Jo0ePXnnlla+66io2ELL8+u53v9taoXFa3mKLLdZbb73VV19dzPngBz+43HLLCWjC1//8+w/9pje9adlll33nO99pKXz5y19eZ511BKsRI/5lPES/fv3kCNaNZWFbevOb38xm+++//4ABAxjDtm91imZkI2SA7kn0tD3KJO+9916BQvwRr/fYYw8xRKz//e9/z1UphdY22mijsWPHMgMfF46omOdqHu1w5EXEUggQ5UH0R6tPiQDOzkLCmtRrk002sSasjPe///3GYhU7vG2GVSZPnsxaVirziGN8xViBTnQOugWVaroJ3WUPQhMdTIOalGjINP785z+btm2A71PKKqusQjvClC3kbW9724gRI9ADBw78wAc+0KfPf0hYekDoM72hwacSqgQ6PKV8+9vfLimQgO25557yLpJYFlKAZ555hlugjTh+/Hgbz+OPP66ViShNgd/oDQyhppvwH7Nt4hiEriKzUjo3iOCclLNTuogvl6UFGrECoiYRSSTpUBg96NZPCKjSPqnST0H5KZ9tSpz2f9vP3nvvvcYaa1xwwQWGPvvss1dddVVxcoMNNhBCrU5bi4Z6Zg8dMgarIFR2E7rLHsQ1DaIrRQwlyHAc6I455phvfetbItXXvvY106aRe+65R1waM2aM7doeoJWZK3WiBESBfkIXonzSchsUHp0ATmXp3OdKK60kBeAZzCN/YwP7hwz7wAMPJBWR7GHYSMWB9KZ/pZpuQvPtYcJAaGWERiNMzxHB8cK+ffDBB8svlbYKGY4jtB3VVoxNK7G7LjfUPzWB5m1QVX35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 transmission: standard
-
+<header>
+<div class="brand">
+<img class="logo" src="LOGO EES1 SIN FONDO.png" alt="Escuela Secundaria N° 1 Lucio V. Mansilla">
+<div>
+<h1>PREGUNTADOS</h1>
+<p><b>Convivir, Participar y Transformar</b></p>
+<p>Nuestra voz cuenta, nuestras acciones transforman</p>
+<p class="jornada">Jornada institucional · Nivel secundario</p>
+</div>
+</div>
+</header>
 <main>
 <section class="panel top">
 <div><label for="team"><b>Equipo:</b></label> <input id="team" value="Equipo 1" maxlength="35"></div>
 <div class="score">Puntaje: <span id="score">0</span></div>
-<div class="small">Jornada institucional · Nivel secundario</div>
 </section>
 <section class="panel game">
 <div class="wheel-wrap">
@@ -61,7 +70,13 @@ footer{text-align:center;color:#60738a;padding:18px}
 </section>
 <section class="panel">
 <h2>¿Cómo se juega?</h2>
-<ol><li>Formen equipos y escriban el nombre del equipo.</li><li>Presionen “Girar la ruleta”.</li><li>Lean la pregunta y conversen antes de responder.</li><li>Cada respuesta correcta suma 10 puntos.</li><li>Al completar las seis categorías, conversen: ¿qué podemos transformar en nuestra escuela?</li></ol>
+<ol>
+<li>Formen equipos y escriban el nombre del equipo.</li>
+<li>Presionen “Girar la ruleta”.</li>
+<li>Lean la pregunta y conversen antes de responder.</li>
+<li>Cada respuesta correcta suma 10 puntos.</li>
+<li>Al completar las seis categorías, conversen: ¿qué podemos transformar en nuestra escuela?</li>
+</ol>
 <p><b>Acuerdo:</b> se valoran también la escucha, el respeto y la construcción de propuestas.</p>
 </section>
 </main>
@@ -70,7 +85,7 @@ footer{text-align:center;color:#60738a;padding:18px}
 const cats=[
 {name:"DERECHOS",color:"#2563a8",emoji:"⚖️",qs:[
 ["¿Qué significa tener derecho a la educación?",["Poder aprender y acceder a la escuela.","Asistir solamente cuando queremos.","Estudiar únicamente las materias que nos gustan."],0,"La educación es un derecho de todas las personas."],
-["¿Los estudiantes tienen derecho a expresar sus opiniones?",["Solamente los delegados.","Sí, respetando a los demás.","Solamente los estudiantes mayores."],1,"Todas las voices merecen ser escuchadas."],
+["¿Los estudiantes tienen derecho a expresar sus opiniones?",["Solamente los delegados.","Sí, respetando a los demás.","Solamente los estudiantes mayores."],1,"Todas las voces merecen ser escuchadas."],
 ["¿Qué debemos hacer ante una situación de discriminación?",["Ignorarla.","Compartirla como una broma.","Acompañar a quien la sufre y buscar ayuda."],2,"La escuela debe ser un espacio de respeto e igualdad."]
 ]},
 {name:"CONVIVENCIA",color:"#24965b",emoji:"🤝",qs:[
